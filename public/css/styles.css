@@ -1,16 +1,16 @@
+:root {
+    font-size: 62.5%;
+}
+
 *{
     margin: 0;
     padding: 0;
 }
 
 body{
-    height: 100vh;
     color: #fff;
-    font: 600 18px Nunito, sans-serif;
 }
 
-#page-landing{
-    background: linear-gradient(329.54deg, #29b6d1 0%, #00c7c7 100%) no-repeat;
-    text-align: center;
-    min-height: 100vh;
+body, input, button, textarea{
+    font: 600 1.8rem/1 Nunito, sans-serif;
 }
