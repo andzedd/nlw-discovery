@@ -7,11 +7,29 @@
 
 #container{
     margin: auto;
-    width: 90%;
+    width: min(90%, 112rem);
+}
+
+#logo{
+    animation-delay: 50ms;
+}
+
+.location{
+    margin-top: 15px;
+    animation-delay: 100ms;
+}
+
+main h1{
+    font-size: clamp(4rem, 8vw, 8.4rem);
+    animation-delay: 150ms;
 }
 
 .location, h1, .visit p{
     height: 16vh;
+}
+
+.visit p{
+    animation-delay: 200ms;
 }
 
 .visit a{
@@ -27,32 +45,32 @@
 
     margin: 0 auto;
     transition: background 200ms;
+    animation-delay: 300ms;
 }
 
 .visit a:hover{
     background: #96feff;
 }
 
-.location{
-    margin-top: 15px;
-}
+/* desktop version */
+@media (min-width: 760px) {
+    header{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
 
-#logo{
-    animation-delay: 50ms;
-}
+    .location, h1, .visit p{
+        height: initial;
+        text-align: initial;
+    }
+    
+    .location{
+        text-align: right;
+    }
 
-.location{
-    animation-delay: 100ms;
-}
-
-main h1{
-    animation-delay: 150ms;
-}
-
-.visit p{
-    animation-delay: 200ms;
-}
-
-.visit a{
-    animation-delay: 300ms;
+    main h1{
+        font-weight: bold;
+        width: min(300px, 80%);
+    }
 }
