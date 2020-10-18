@@ -26,3 +26,26 @@ const icon = L.icon({
 
 
 L.marker([-23.7163087, -46.5809802], { icon }).addTo(map);
+
+
+// image gallery
+
+function selectImage(e){
+    const button = e.currentTarget;
+    
+    // remove all active classes
+    const buttons = document.querySelectorAll(".images button");
+    buttons.forEach((button) =>{
+        button.classList.remove("active");
+    });
+
+    // select clicked image
+    const image = button.children[0];
+    const imageContainer = document.querySelector(".orphanage-details > img");
+
+    // update image container
+    imageContainer.src = image.src;
+
+    //add active class to clicked button
+    button.classList.add("active");
+}

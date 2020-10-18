@@ -4,6 +4,7 @@
 }
 
 aside.side-bar{
+    z-index: 10;
     position: fixed;
     background: linear-gradient(329.54deg, #15b6d6 0%, #15d6d6 100%) no-repeat;
     height: 100%;
