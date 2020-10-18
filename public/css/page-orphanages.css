@@ -61,6 +61,7 @@ a.create-orphanage:hover{
 }
 
 .leaflet-popup-content-wrapper{
+    margin-left: 5px;
     background: rgba(255, 255, 255, 0.8);
     border-radius: 20px;
 }
