@@ -29,3 +29,7 @@ aside.side-bar footer button{
 aside.side-bar footer button:hover{
     background: #17D6EB;
 }
+
+.with-sidebar{
+    padding-left: 110px;
+}
