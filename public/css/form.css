@@ -87,7 +87,6 @@ fieldset legend{
 
 .new-upload{
     position: relative;
-
 }
 
 .new-upload span{
@@ -105,4 +104,8 @@ fieldset legend{
     display: flex;
 
     cursor: pointer;
+}
+
+.new-upload + .new-upload {
+    margin-top: 2.4rem;
 }
