@@ -20,4 +20,10 @@ let marker;
 map.on('click', (e) => {
     const lat = e.latlng.lat;
     const lng = e.latlng.lng;
-})
+
+    // clear map before adding icon
+    marker && map.removeLayer(marker);
+
+    // add icon marker
+    marker = L.marker([lat,lng], { icon }).addTo(map);
+});
