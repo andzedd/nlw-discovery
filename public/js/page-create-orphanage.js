@@ -52,11 +52,23 @@ function removePhoto(e){
     const uploads = document.querySelectorAll('.new-upload').length;
 
     if(uploads <= 1){
-        deleteButton.previousSibling.previousSibling.value = ""
+        deleteButton.previousSibling.previousSibling.value = "";
         return
     }
 
-    deleteButton.parentNode.remove()
+    deleteButton.parentNode.remove();
+}
 
+function toggleSelect(e){
+    const button = e.currentTarget;
 
+    document.querySelectorAll(".button-select button").forEach(element => {
+        element.classList.remove("active");
+    });
+
+    button.classList.add("active");
+
+    const input = document.querySelector('[name="open_on_weekends"]');
+
+    input.value = button.dataset.value;
 }
