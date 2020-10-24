@@ -5,16 +5,23 @@ const app = express();
 
 app.use(express.static(path.join(__dirname, '..', '/public')));
 
+app.set('views', path.join(__dirname, 'views'))
+app.set('view engine', 'hbs')
+
 app.get("/", (req,res) => {
-    return res.sendFile(path.join(__dirname, 'views', 'index.html'))
+    return res.render('index')
 })
 
 app.get("/orphanages", (req,res) => {
-    return res.sendFile(path.join(__dirname, 'views', 'orphanages.html'))
+    return res.render('orphanages')
 })
 
 app.get("/create-orphanage", (req,res) => {
-    return res.sendFile(path.join(__dirname, 'views', 'create-orphanage.html'))
+    return res.render('create-orphanage')
+})
+
+app.get("/orphanage", (req,res) => {
+    return res.render('orphanage')
 })
 
 app.listen(3000, () => {
