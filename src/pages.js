@@ -5,7 +5,7 @@ module.exports = {
     orphanages(req,res) {
         return res.render('orphanages')
     },
-    create_orphanage(req,res) {
+    createOrphanage(req,res) {
         return res.render('create-orphanage')
     },
     orphanage(req,res) {

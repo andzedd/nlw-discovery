@@ -13,7 +13,7 @@ app.get("/", pages.index)
 
 app.get("/orphanages", pages.orphanages)
 
-app.get("/create-orphanage", pages.create_orphanage)
+app.get("/create-orphanage", pages.createOrphanage)
 
 app.get("/orphanage", pages.orphanage)
 
