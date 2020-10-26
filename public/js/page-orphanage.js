@@ -6,7 +6,10 @@ const options = {
     zoomControl: false
 }
 
-const map = L.map('mapid', options).setView([-23.7163087, -46.5809802], 13);
+const lat = document.querySelector('span[data-lat]').dataset.lat
+const lng = document.querySelector('span[data-lng]').dataset.lng
+
+const map = L.map('mapid', options).setView([lat, lng], 13);
 
 
 L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
@@ -24,8 +27,7 @@ const icon = L.icon({
     popupAnchor: [170, 2]
 })
 
-
-L.marker([-23.7163087, -46.5809802], { icon }).addTo(map);
+L.marker([lat, lng], { icon }).addTo(map);
 
 
 // image gallery
