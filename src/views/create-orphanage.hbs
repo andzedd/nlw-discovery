@@ -39,7 +39,7 @@
         </aside>       
 
         <main class="with-sidebar animate-appear">
-            <form action="">
+            <form action="save-orphanage" method="POST" onsubmit="validate(event)">
                 <fieldset>
                     <legend>Dados</legend>
                     <div class="map-container">
@@ -55,15 +55,15 @@
 
                     <div class="input-block">
                         <label for="name">Nome</label>
-                        <input id="name" name="orphanage-name" required>
+                        <input id="name" name="name" required>
                     </div>
                     <div class="input-block">
                         <label for="about">Sobre <span>Máximo 300 caractéres</span></label>
-                        <textarea id="about" name="orphanage-about" required></textarea>
+                        <textarea id="about" name="about" required></textarea>
                     </div>
                     <div class="input-block">
                         <label for="whatsapp">Whatsapp</label>
-                        <input id="whatsapp" name="orphanage-whatsapp" required>
+                        <input id="whatsapp" name="whatsapp" required>
                     </div>
                     <div class="input-block images">
                         <label for="images">Fotos</label>
@@ -84,11 +84,11 @@
                     <legend>Visitação</legend>
                     <div class="input-block">
                         <label for="instructions">Instruções</label>
-                        <textarea id="instructions" name="orphanage-instructions" required></textarea>
+                        <textarea id="instructions" name="instructions" required></textarea>
                     </div>
                     <div class="input-block">
                         <label for="hours">Horários das Visitas</label>
-                        <input id="hours" name="orphanage-hours" required>
+                        <input id="hours" name="hours" required>
                     </div>
                     <div class="input-block">
                         <label for="open_on_weekends">Atende fim de semana?</label>
