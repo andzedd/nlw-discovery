@@ -21,7 +21,7 @@
     <link rel="stylesheet" href="/css/buttons.css">
     <link rel="stylesheet" href="/css/animations.css">
 
-    <title>Lar da Mamãe Clory | Happy</title>
+    <title>{{ orphanage.name }} | Happy</title>
 </head>
 <body>
     <div id="page-orphanage">
@@ -39,60 +39,50 @@
 
         <main class="with-sidebar animate-appear">
             <div class="orphanage-details">
-                <img src="/images/home.jpg" alt="Lar da mamãe clory">
+                <img src="{{orphanage.firstImage}}" alt="{{ orphanage.name }}">
 
                 <div class="images">
-                    <button onclick="selectImage(event)" class="active" type="button">
-                        <img src="https://source.unsplash.com/random?id=1" alt="Lar da mamãe clory" srcset="">
-                    </button>
-
-                    <button onclick="selectImage(event)" type="button">
-                        <img src="https://source.unsplash.com/random?id=2" alt="Lar da mamãe clory" srcset="">
-                    </button>
-
-                    <button onclick="selectImage(event)" type="button">
-                        <img src="https://source.unsplash.com/random?id=3" alt="Lar da mamãe clory" srcset="">
-                    </button>
-
-                    <button onclick="selectImage(event)" type="button">
-                        <img src="https://source.unsplash.com/random?id=4" alt="Lar da mamãe clory" srcset="">
-                    </button>
-
-                    <button onclick="selectImage(event)" type="button">
-                        <img src="https://source.unsplash.com/random?id=5" alt="Lar da mamãe clory" srcset="">
-                    </button>
-
-                    <button onclick="selectImage(event)" type="button">
-                        <img src="https://source.unsplash.com/random?id=6" alt="Lar da mamãe clory" srcset="">
-                    </button>
+                    {{#each orphanage.images}}
+                        <button onclick="selectImage(event)" class="active" type="button">
+                            <img src="{{this}}" alt="{{ orphanage.name }}" srcset="">
+                        </button>
+                    {{/each}}
                 </div>
 
                 <div class="orphanage-details-content">
-                    <h1>Lar da Mamãe Clory</h1>
+                    <h1>{{ orphanage.name }}</h1>
 
-                    <p>Presta assistência a crianças de 06 a 15 anos que se encontre em situação de risco e/ou vulnerabilidade social.</p>
+                    <p>{{ orphanage.about }}</p>
 
                     <div class="map-container">
                         <div id="mapid"></div>
+                        <span
+                        data-lat="{{orphanage.lat}}"
+                        data-lng="{{orphanage.lng}}"
+                        ></span>
                         <footer>
-                            <a href="">Ver rotas no Google Maps</a>
+                            <a target="_blank" href="https://maps.google.com/mobile?q={{orphanage.lat}},{{orphanage.lng}}&z=13">Ver rotas no Google Maps</a>
                         </footer>
                     </div>
                     
                     <hr>
 
                     <h2>Instruções para visita</h2>
-                    <p>Venha como se sentir a vontade e traga muito amor e paciência para dar.</p>
+                    <p>{{ orphanage.instructions }}</p>
 
                     <div class="open-details">
                         <div class="hour">
                             <img src="/images/clock.svg" alt="Horários">
-                            <p>Horário de visitas</p>
-                            <p>Das 8h até 18h</p>
+                            <p>{{ orphanage.opening_hours }}</p>
                         </div>
                         <div class="open-on-weekends">
-                            <img src="/images/info.svg" alt="Informações">
-                            <p>Atendemos fim de semana</p>
+                            {{#if orphanage.open_on_weekends}}
+                                <img src="/images/info.svg" alt="Informações">
+                                <p>Atendemos fim de semana</p>
+                            {{else}}
+                                <img src="/images/info.svg" alt="Informações">
+                                <p>Não atendemos fim de semana</p>
+                            {{/if}}
                         </div>
                     </div>
 
